@@ -15,7 +15,7 @@ public class Car {
 
     public Car(String name, int distance) {
         this.name = new Name(name);
-        this.distance = new Distance();
+        this.distance = new Distance(distance);
     }
 
     public void move(int randomNumber) {
