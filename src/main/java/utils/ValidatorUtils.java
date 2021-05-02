@@ -30,4 +30,8 @@ public class ValidatorUtils {
         }
         return cnt;
     }
+
+    public static boolean checkTryCnt(int tryCnt) {
+        return tryCnt < 1;
+    }
 }

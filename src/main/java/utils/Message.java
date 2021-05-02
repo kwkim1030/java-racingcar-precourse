@@ -5,7 +5,8 @@ public enum Message {
     TRY_MSG("시도할 회수는 몇회인가요?"),
     EXCEED_MAX_LENGTH_MSG("자동차의 이름은 5자를 초과할 수 없습니다."),
     DUPLICATE_NAME_MSG("자동차의 이름은 중복될 수 없습니다."),
-    BLACK_CAR_NAMES_MSG("자동차의 이름을 입력하여 주세요.");
+    BLACK_CAR_NAMES_MSG("자동차의 이름을 입력하여 주세요."),
+    INVALID_TRY_COUNT_MSG("자동차의 이름을 입력하여 주세요.");
 
     final private String message;
 
