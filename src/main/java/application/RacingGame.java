@@ -13,6 +13,7 @@ public class RacingGame {
         cars = new Cars(InputUtils.inputCarName());
         tryCnt = new Try(InputUtils.inputTry());
 
+        OutputUtils.printDoResult();
         while(tryCnt.checkRemainCnt()) {
             race();
         }
@@ -23,5 +24,6 @@ public class RacingGame {
     private void race() {
         tryCnt.move();
         cars.move();
+        OutputUtils.printRaceResult(cars);
     }
 }

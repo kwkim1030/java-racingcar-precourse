@@ -7,7 +7,8 @@ public enum Message {
     DUPLICATE_NAME_MSG("자동차의 이름은 중복될 수 없습니다."),
     BLACK_CAR_NAMES_MSG("자동차의 이름을 입력하여 주세요."),
     INVALID_TRY_COUNT_MSG("1 이상의 숫자를 입력해 주세요."),
-    WINNER_MSG("가 최종 우승했습니다.");
+    WINNER_MSG("가 최종 우승했습니다."),
+    DO_RESULT_MST("실행 결과");
 
     final private String message;
 

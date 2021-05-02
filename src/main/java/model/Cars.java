@@ -57,6 +57,14 @@ public class Cars {
         return sb.substring(2);
     }
 
+    public String getRaceStatus() {
+        StringBuilder sb = new StringBuilder();
+        for (Car car : cars) {
+            sb.append(car.getName()).append(" : ").append(car.getRaceStatus()).append('\n');
+        }
+        return sb.toString();
+    }
+
     public List<Car> getCars() {
         return this.cars;
     }

@@ -37,6 +37,14 @@ public class Car {
         return sb.toString();
     }
 
+    public String getRaceStatus() {
+        StringBuilder status = new StringBuilder();
+        for (int i = 0 ; i < distance ; i ++) {
+            status.append("-");
+        }
+        return status.toString();
+    }
+
     private boolean isWinner(int maxDistance) {
         return maxDistance == distance;
     }
