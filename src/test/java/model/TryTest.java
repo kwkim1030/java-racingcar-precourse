@@ -25,4 +25,11 @@ public class TryTest {
     public void Try_Remain_Test () {
         assertThat(tryCnt.checkRemainCnt()).isEqualTo(true);
     }
+
+    @Test
+    @DisplayName("try move 테스트")
+    public void Try_Move_Test () {
+        tryCnt.move();
+        assertThat(tryCnt.getTryCnt()).isEqualTo(1);
+    }
 }

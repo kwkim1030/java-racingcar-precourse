@@ -23,4 +23,19 @@ public class CarTest {
         car.move(2);
         assertThat(car.getDistance()).isEqualTo(1);
     }
+
+    @Test
+    @DisplayName("자동차 위치 출력 Test")
+    public void 자동차_위치_TEST() {
+        car = new Car("kwkim", 5);
+        assertThat(car.getRaceStatus()).isEqualTo("-----");
+    }
+
+    @Test
+    @DisplayName("우승 자동차 출력 Test")
+    public void 자동차_우승_TEST() {
+        car = new Car("kwkim", 5);
+        StringBuilder sb = new StringBuilder();
+        assertThat(car.getWinnerNames(5,sb)).isEqualTo(", kwkim");
+    }
 }
