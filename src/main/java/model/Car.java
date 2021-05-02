@@ -30,6 +30,17 @@ public class Car {
         }
     }
 
+    public String getWinnerNames(int maxDistance, StringBuilder sb) {
+        if (isWinner(maxDistance)) {
+            sb.append(", ").append(name);
+        }
+        return sb.toString();
+    }
+
+    private boolean isWinner(int maxDistance) {
+        return maxDistance == distance;
+    }
+
     public String getName() {
         return name;
     }

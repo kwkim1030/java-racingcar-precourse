@@ -41,6 +41,22 @@ public class Cars {
         return random.nextInt(MAX_RANDOM_BOUND);
     }
 
+    public int getMaxDistance() {
+        int maxDistance = 0;
+        for (Car car : cars) {
+            maxDistance = Math.max(maxDistance, car.getDistance());
+        }
+        return maxDistance;
+    }
+
+    public String getWinner() {
+        StringBuilder sb = new StringBuilder();
+        for (Car car : cars) {
+            car.getWinnerNames(getMaxDistance(), sb);
+        }
+        return sb.substring(2);
+    }
+
     public List<Car> getCars() {
         return this.cars;
     }
