@@ -19,5 +19,6 @@ public class RacingGame {
 
     private void race() {
         tryCnt.move();
+        cars.move();
     }
 }

@@ -5,8 +5,11 @@ import utils.ValidatorUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Cars {
+    private final static int MAX_RANDOM_BOUND = 10;
+
     private List<Car> cars;
 
     public Cars(String carNames) {
@@ -25,6 +28,17 @@ public class Cars {
 
     public Cars(List<Car> cars) {
         this.cars = cars;
+    }
+
+    public void move() {
+        for (Car car : cars) {
+            car.move(generateRandomNumber());
+        }
+    }
+
+    private int generateRandomNumber() {
+        Random random = new Random();
+        return random.nextInt(MAX_RANDOM_BOUND);
     }
 
     public List<Car> getCars() {

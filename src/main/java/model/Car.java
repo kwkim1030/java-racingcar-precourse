@@ -6,6 +6,8 @@ import utils.ValidatorUtils;
 import java.util.Objects;
 
 public class Car {
+    private static final int MOVE_NUMBER = 3;
+
     private String name;
     private int distance;
 
@@ -21,8 +23,18 @@ public class Car {
         this.distance = distance;
     }
 
+    public void move(int randomNumber) {
+        if (randomNumber > MOVE_NUMBER) {
+            distance++;
+        }
+    }
+
     public String getName() {
         return name;
+    }
+
+    public int getDistance() {
+        return distance;
     }
 
     @Override
