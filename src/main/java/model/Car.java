@@ -16,6 +16,7 @@ public class Car {
             throw new IllegalArgumentException(Message.EXCEED_MAX_LENGTH_MSG.getMessage());
         }
         this.name = name;
+        this.distance = 0;
     }
 
     public Car(String name, int distance) {
