@@ -1,60 +1,54 @@
 package model;
 
-import utils.Message;
-import utils.ValidatorUtils;
-
 import java.util.Objects;
 
 public class Car {
     private static final int MOVE_NUMBER = 3;
 
-    private String name;
-    private int distance;
+    private Name name;
+    private Distance distance;
 
     public Car(String name) {
-        if (ValidatorUtils.exceedMaxLength(name)) {
-            throw new IllegalArgumentException(Message.EXCEED_MAX_LENGTH_MSG.getMessage());
-        }
-        this.name = name;
-        this.distance = 0;
+        this.name = new Name(name);
+        this.distance = new Distance();
     }
 
     public Car(String name, int distance) {
-        this.name = name;
-        this.distance = distance;
+        this.name = new Name(name);
+        this.distance = new Distance();
     }
 
     public void move(int randomNumber) {
         if (randomNumber > MOVE_NUMBER) {
-            distance++;
+            this.distance = distance.move();
         }
     }
 
     public String getWinnerNames(int maxDistance, StringBuilder sb) {
         if (isWinner(maxDistance)) {
-            sb.append(", ").append(name);
+            sb.append(", ").append(name.getName());
         }
         return sb.toString();
     }
 
     public String getRaceStatus() {
         StringBuilder status = new StringBuilder();
-        for (int i = 0 ; i < distance ; i ++) {
+        for (int i = 0 ; i < distance.getDistance() ; i ++) {
             status.append("-");
         }
         return status.toString();
     }
 
     private boolean isWinner(int maxDistance) {
-        return maxDistance == distance;
+        return distance.equals(new Distance(maxDistance));
     }
 
     public String getName() {
-        return name;
+        return name.getName();
     }
 
     public int getDistance() {
-        return distance;
+        return distance.getDistance();
     }
 
     @Override
